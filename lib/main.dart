@@ -1,5 +1,4 @@
-// arnabbasak // linkedin/in/arnab-basak //
-// linkedin/in/arnab-basak
+// arnabbasak // linkedin/in/arnab-basak
 
 import 'package:flutter/material.dart';
 import 'quiz_brain.dart';
@@ -13,12 +12,22 @@ class Quizzler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.grey.shade900,
+        // backgroundColor: Colors.grey.shade900,
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: QuizPage(),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                image: DecorationImage(
+                  image: AssetImage('assets/back.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: QuizPage(),
+            ),
           ),
         ),
       ),
@@ -50,11 +59,17 @@ class _QuizPageState extends State<QuizPage> {
       } else {
         if (userAns == correctAnswer) {
           scores.add(
-            Icon(Icons.check, color: Colors.green),
+            Icon(
+              Icons.check,
+              color: Colors.green,
+            ),
           );
         } else {
           scores.add(
-            Icon(Icons.close, color: Colors.red),
+            Icon(
+              Icons.close,
+              color: Colors.red,
+            ),
           );
         }
 
@@ -89,13 +104,16 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: EdgeInsets.all(15.0),
             child: FlatButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+              ),
               textColor: Colors.white,
               color: Colors.green,
               child: Text(
                 'True',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 20.0,
+                  fontSize: 22.0,
                 ),
               ),
               onPressed: () {
@@ -108,11 +126,15 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: EdgeInsets.all(15.0),
             child: FlatButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+              ),
+              textColor: Colors.white,
               color: Colors.red,
               child: Text(
                 'False',
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 22.0,
                   color: Colors.white,
                 ),
               ),
