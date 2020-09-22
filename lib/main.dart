@@ -47,8 +47,8 @@ class _QuizPageState extends State<QuizPage> {
       if (quizBrain.isFinished() == true) {
         Alert(
           context: context,
-          title: 'Finished!',
-          desc: 'You\'ve reached the end of the quiz.',
+          title: 'Quiz Finished!',
+          desc: '\nDeveloped by ARNAB.\nThanks!',
         ).show();
 
         quizBrain.reset();
