@@ -20,6 +20,10 @@ class Quizzler extends StatelessWidget {
             image: DecorationImage(
               image: AssetImage('assets/back.jpg'),
               fit: BoxFit.cover,
+              colorFilter: new ColorFilter.mode(
+                Colors.black.withOpacity(0.3),
+                BlendMode.darken,
+              ),
             ),
           ),
           child: QuizPage(),
@@ -83,13 +87,13 @@ class _QuizPageState extends State<QuizPage> {
           Expanded(
             flex: 5,
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(5.0),
               child: Center(
                 child: Text(
                   quizBrain.getQuestionText(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 25.0,
+                    fontSize: 26.0,
                     color: Colors.white,
                   ),
                 ),
