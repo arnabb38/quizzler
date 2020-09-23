@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'quiz_brain.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:audioplayers/audio_cache.dart';
 
 QuizBrain quizBrain = new QuizBrain();
 
@@ -41,10 +42,16 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scores = [];
 
+  void playSound() {
+    final player = AudioCache();
+    player.play('sound/warn.wav');
+  }
+
   void checkAns(bool userAns) {
     bool correctAnswer = quizBrain.getCorrectAnswer();
     setState(() {
       if (quizBrain.isFinished() == true) {
+        playSound();
         Alert(
           context: context,
           title: 'Quiz Finished!',
