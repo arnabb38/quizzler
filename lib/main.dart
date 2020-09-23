@@ -18,7 +18,7 @@ class Quizzler extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.grey.shade900,
             image: DecorationImage(
-              image: AssetImage('assets/back.jpg'),
+              image: AssetImage('assets/img/back.jpg'),
               fit: BoxFit.cover,
               colorFilter: new ColorFilter.mode(
                 Colors.black.withOpacity(0.3),
